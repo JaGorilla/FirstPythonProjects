@@ -5,6 +5,7 @@ print(random.randint(1, 20))
 while True:
     Ans = input("Again?\n").lower()
     if Ans == "y" or Ans == "yes" or Ans == "":
+        print()
         print(random.randint(1, 20))
     else:
         break
