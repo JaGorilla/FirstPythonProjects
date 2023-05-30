@@ -10,10 +10,10 @@ nr_letters= int(input("\nHow many letters would you like in your password?\n"))
 nr_symbols = int(input(f"How many symbols would you like?\n"))
 nr_numbers = int(input(f"How many numbers would you like?\n"))
 
-password = [""] # Create empty string and list
+password = [] # Create empty list. Must be a list for final shuffle.
 
 for x in range(0, nr_letters): # The number of loops depends on user input
-  password.append(random.choice(letters)) # adding to our string with each loop
+  password.append(random.choice(letters)) # adding to our list with each loop
 
 for x in range(0, nr_symbols):
   password.append(random.choice(symbols))
