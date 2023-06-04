@@ -34,7 +34,7 @@ def caesar(start_text, shift_amount, cipher_direction):
 
 ciphering = True
 while ciphering:
-  print(art.logo)
+  print(logo)
   direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
   text = input("Type your message:\n").lower()
   shift = int(input("Type the shift number:\n"))
