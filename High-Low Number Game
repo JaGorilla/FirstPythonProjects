@@ -9,7 +9,7 @@ logo = '''
     \__\/ \::\/\________\/           \_____\/ \_____\/ 
     
  '''
-import random
+from random import randint
 
 def userGuess():
   guess = int(input("What is your guess?\n"))
@@ -34,14 +34,11 @@ def playAgain(ans):
     return False
   else:
     return True
-  
-numList = []
-for x in range (1, 101):
-  numList.append(x)
+
 stop = False
 while not stop:
   print(logo)
-  secretNumber = random.choice(numList)
+  secretNumber = randint(1, 100)
   difficulty = input("\nWhich difficulty do you choose? Easy or hard?\n").lower()
   if difficulty == "easy":
     lives = 10
