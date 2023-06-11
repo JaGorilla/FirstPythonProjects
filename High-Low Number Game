@@ -1,0 +1,56 @@
+logo = '''
+
+ ___   ___    ________            __       ______      
+/__/\ /__/\  /_______/\          /_/\     /_____/\     
+\::\ \\  \ \ \__.::._\/   _______\:\ \    \:::_ \ \    
+ \::\/_\ .\ \   \::\ \   /______/\\:\ \    \:\ \ \ \   
+  \:: ___::\ \  _\::\ \__\__::::\/ \:\ \____\:\ \ \ \  
+   \: \ \\::\ \/__\::\__/\          \:\/___/\\:\_\ \ \ 
+    \__\/ \::\/\________\/           \_____\/ \_____\/ 
+    
+ '''
+import random
+
+def userGuess():
+  guess = int(input("What is your guess?\n"))
+  if guess == secretNumber:
+    print("Correct!!! You win!")
+    return
+  else:
+    global lives
+    lives -= 1
+    if guess > secretNumber:
+      print("Too high.")
+    elif guess < secretNumber:
+      print("Too low.")
+    print(f"You have {lives} guesses left.\n")
+    if lives == 0:
+      print(f"Game over... the correct number was {secretNumber}.\n")
+      return
+    userGuess()
+    
+def playAgain(ans):
+  if ans == "yes":
+    return False
+  else:
+    return True
+  
+numList = []
+for x in range (1, 101):
+  numList.append(x)
+stop = False
+while not stop:
+  print(logo)
+  secretNumber = random.choice(numList)
+  difficulty = input("\nWhich difficulty do you choose? Easy or hard?\n").lower()
+  if difficulty == "easy":
+    lives = 10
+  else:
+    lives = 5
+
+  print(f"Great. You must guess which number I'm thinking of between 1 & 100. You have {lives} guesses remaining.")
+    
+  userGuess()
+  stop = playAgain(input('Play again? Enter "yes" or "no".\n').lower())
+
+print("\nGoodbye.")
