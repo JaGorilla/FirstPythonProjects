@@ -2,6 +2,9 @@ import random
 import turtle
 from turtle import Turtle, Screen
 
+screen = Screen()
+screen.color("black")
+
 tim.hideturtle()
 tim.speed("fastest")
 
