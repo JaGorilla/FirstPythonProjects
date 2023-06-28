@@ -17,10 +17,8 @@ turtle.colormode(255)
 num_sides = 3
   for x in range(21):
       for x in range(num_sides):
-          larry.begin_fill()
           larry.fd(100)
           larry.right(360 / num_sides)
-          larry.end_fill()
       num_sides += 1
       larry.pencolor(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
 
