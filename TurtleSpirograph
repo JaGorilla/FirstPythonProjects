@@ -1,0 +1,21 @@
+import random
+import turtle
+from turtle import Turtle, Screen
+
+tim = Turtle()
+screen = Screen()
+screen.bgcolor("black")
+turtle.colormode(255)
+
+tim.hideturtle()
+tim.speed("fastest")
+
+def spirograph():
+    for x in range(180):
+        tim.circle(150)
+        tim.left(2)
+        tim.pencolor(random.randint(25, 255), random.randint(25, 255), random.randint(25, 255))
+
+spirograph()
+
+screen.exitonclick()
