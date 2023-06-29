@@ -3,7 +3,7 @@ import turtle
 from turtle import Turtle, Screen
 
 screen = Screen()
-screen.color("black")
+screen.bgcolor("black")
 
 tim.hideturtle()
 tim.speed("fastest")
