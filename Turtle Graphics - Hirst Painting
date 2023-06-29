@@ -1,0 +1,30 @@
+import turtle
+from turtle import Turtle, Screen
+import random
+
+turtle.colormode(255)
+
+hirst_colors = [(247, 215, 64), (37, 105, 154), (203, 233, 248), (247, 145, 48), (222, 246, 233), (219, 156, 3),
+                (240, 42, 73), (162, 24, 60), (86, 186, 223), (30, 185, 129), (165, 86, 29), (250, 63, 24),
+                (225, 217, 6), (172, 45, 64), (154, 32, 23), (105, 105, 190), (238, 128, 142), (124, 203, 151),
+                (64, 45, 59), (249, 158, 199), (45, 48, 141), (132, 239, 188), (49, 37, 69), (30, 85, 81),
+                (36, 185, 213), (111, 213, 238), (50, 126, 101), (238, 168, 159)]
+
+screen = Screen()
+larry = Turtle()
+larry.hideturtle()
+larry.pu()
+xcor = -300
+ycor = -295
+larry.setposition(xcor, ycor)
+
+for x in range(7):
+    for y in range(7):
+        larry.setposition(xcor, ycor)
+        larry.dot(50, random.choice(hirst_colors))
+        xcor += 100
+    ycor += 100
+    xcor -= 700
+
+
+screen.exitonclick()
