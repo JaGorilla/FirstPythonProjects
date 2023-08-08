@@ -1,0 +1,33 @@
+from tkinter import *
+
+
+def convert_input():
+    inputted_miles = int(input_box.get())
+    result = inputted_miles * 1.60934
+    answer_label.config(text=f"~{round(result)}")
+
+
+window = Tk()
+window.minsize(300,20)
+window.title("Miles to Kilometers Converter")
+window.config(padx=50, pady=20)
+
+input_box = Entry(width=5)
+input_box.grid(column=1, row=0)
+
+label = Label(text="Miles")
+label.grid(column=2, row=0)
+
+label = Label(text="is equal to")
+label.grid(column=0, row=1)
+
+answer_label = Label(text="0")
+answer_label.grid(column=1, row=1)
+
+label = Label(text="Kilometers")
+label.grid(column=2, row=1)
+
+button = Button(text="Convert", command=convert_input)
+button.grid(column=1, row=2)
+
+window.mainloop()
